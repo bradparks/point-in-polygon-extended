@@ -1,7 +1,10 @@
 # point-in-polygon-extended
 
-
 [![Build Status](https://travis-ci.org/iominh/point-in-polygon-extended.svg)](https://travis-ci.org/iominh/point-in-polygon-extended) [![Coverage Status](https://coveralls.io/repos/iominh/point-in-polygon-extended/badge.svg)](https://coveralls.io/r/iominh/point-in-polygon-extended)
+
+* Update: 6/7/15: As seen by the build status it seems neither the winding number or
+ray casting point-in-polygon algorithms pass the point on polygon border test, so at this time I can't remember this
+library. Instead, maybe look at [robust-point-in-polygon](https://www.npmjs.com/package/robust-point-in-polygon)
 
 Determine if a point is inside of a polygon.
 
