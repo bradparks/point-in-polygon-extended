@@ -1,6 +1,8 @@
 point-in-polygon-extended
 ================
 
+[![Build Status](https://travis-ci.org/iominh/point-in-polygon-extended.svg)](https://travis-ci.org/iominh/point-in-polygon-extended) [![Coverage Status](https://coveralls.io/repos/iominh/point-in-polygon-extended/badge.svg)](https://coveralls.io/r/iominh/point-in-polygon-extended)
+
 Determine if a point is inside of a polygon.
 
 This is a fork of James Halliday's [point-in-polygon](https://github.com/substack/point-in-polygon) that extends it to allow for alternative algorithms beyond ray casting.
