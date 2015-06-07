@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 branches:
   only:
-    - gh-pages
+    - master
 after_success: gulp coverage
