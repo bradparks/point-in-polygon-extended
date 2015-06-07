@@ -187,7 +187,7 @@ gulp.task('coverage', ['build'], function(doneCallback) {
   // use libtess.debug.js for coverage testing (see TODO in test/common.js)
   process.env.testType = 'coverage';
 
-  gulp.src('dist/point-in-polygon-extended.debug.js')
+  gulp.src('src/index.js')
     .pipe(istanbul())
     .on('finish', function() {
       gulp.src('test/*.test.js')
