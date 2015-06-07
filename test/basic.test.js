@@ -9,7 +9,6 @@ var pointInPoly = require('../src/index.js');
 function convertArraysToXYObjects(array) {
 	var simpleRectangleObjects = [];
 	array.forEach(function (element) {
-		console.log(element);
 		simpleRectangleObjects.push({
 			x: element[0],
 			y: element[1]

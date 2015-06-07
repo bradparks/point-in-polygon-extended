@@ -38,7 +38,9 @@ output:
 methods
 =======
 
-inside(point, polygon, algorithm)
+
+
+pointInPolyWindingNumber(point, polygon)
 ----------------------
 
 Return whether `point` is contained in `polygon`.
@@ -47,16 +49,12 @@ Return whether `point` is contained in `polygon`.
 
 `polygon` should be an array of 2-item arrays of coordinates.
 
-`algorithm` is an optional string specifying the algorithm to use. By default it uses ray casting. See the algorithms
-section for more details
-
 algorithms
 =======
 
 Algorithm | notes
 ------------- | -------------
 raycast  | Based on the [Point Inclusion in Polygon Test (PNPOLY) by W. Randolph Franklin](http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html). This is the default algorithm is none is specified.
-robustRaycast | More robust point in polygon detection
 windingNumber | Based on the [winding number test](http://geomalgorithms.com/a03-_inclusion.html) by Dan Sunday
 
 install
@@ -79,3 +77,13 @@ other options / research
 
 - [Java polygon-contains-point](https://github.com/sromku/polygon-contains-point/tree/master/Polygon/src/com/sromku/polygon)
 - [Stackoverflow point-in-polygon answer](http://stackoverflow.com/questions/217578/point-in-polygon-aka-hit-test)
+
+tips + tricks
+======
+If you have Webstorm or IntelliJ, set a breakpoint and create a Mocha run configuration with a TDD user interface.
+
+Alternatively, you can run from the root directory
+
+```javascript
+mocha --ui tdd
+```
