@@ -1,4 +1,4 @@
-var inside = require('point-in-polygon');
+var inside = require('point-in-polygon-extended').pointInPolyWindingNumber;
 var polygon = [ [ 1, 1 ], [ 1, 2 ], [ 2, 2 ], [ 2, 1 ] ];
 
 console.dir([

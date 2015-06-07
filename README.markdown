@@ -19,7 +19,7 @@ suite to compare the different algorithms for different test cases.
 
 
 ```js
-var pointInPoly = require('point-in-polygon');
+var pointInPoly = require('point-in-polygon-extended');
 var pointInPolyRaycast = pointInPoly.pointInPolyRaycast;
 var pointInPolyWindingNumber = pointInPoly.pointInPolyWindingNumber;
 
@@ -55,7 +55,7 @@ console.dir([
  * @param polygon {Array} should be an array of 2-item arrays of coordinates.
  * @returns {boolean} true if point is inside or false if not
  */
-function pointInPolyRaycast(point, polygon) {};
+function pointInPolyRaycast(point, polygon)
 ```
 
 ## Winding number
@@ -69,6 +69,7 @@ function pointInPolyRaycast(point, polygon) {};
  * @param polygon {Array} should be an array of 2-item arrays of coordinates.
  * @return {boolean} true if inside, false if outside
  */
+ function pointInPolyWindingNumber(point, polygon)
  ```
 
 # install
@@ -79,12 +80,12 @@ function pointInPolyRaycast(point, polygon) {};
 
 Thank you to the following people and projects:
 
-- James Halliday /substack for [point-in-polygon](https://github.com/substack/point-in-polygon)
-- Mikola Lysenko for [robust-point-in-polygon](https://github.com/mikolalysenko/robust-point-in-polygon)
-- Brendan Kenny for[libtess.js](https://github.com/brendankenny/libtess.js). I borrowed a lot of his testing layout
+- James Halliday / substack for his [point-in-polygon](https://github.com/substack/point-in-polygon)
+- Mikola Lysenko for his [robust-point-in-polygon](https://github.com/mikolalysenko/robust-point-in-polygon)
+- Brendan Kenny for his [libtess.js](https://github.com/brendankenny/libtess.js). I borrowed a lot of his testing layout
 (gulp, travis, coveralls, mocha, etc)
-- Dan Sunday for [winding number algorithm](http://geomalgorithms.com/a03-_inclusion.html)
-- W. Randolph Franklin: for [ray casting algorithm](http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html)
+- Dan Sunday for his [winding number algorithm](http://geomalgorithms.com/a03-_inclusion.html)
+- W. Randolph Franklin for his [ray casting algorithm](http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html)
 
 # other options / research
 
