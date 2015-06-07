@@ -3,9 +3,12 @@ point-in-polygon
 
 Determine if a point is inside of a polygon.
 
-This module casts a ray from the inquiry point and counts intersections,
-based on
-[this algorithm](http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html).
+This is a fork of James Halliday's [point-in-polygon](https://github.com/substack/point-in-polygon) that extends it to allow for alternative algorithms beyond ray casting.
+
+I had issues using the original library because it failed to detect points on boundaries [see issue2](https://github.com/substack/point-in-polygon/issues/2) so I switched to [robust-point-in-polygon](https://www.npmjs.com/package/robust-point-in-polygon) but
+that too had issues for certain complex polygons.
+
+Ultimately, I've decided to implement my own library that allows a user to switch between different algorithms and compare their results. The current default algorithm I'm exploring is the [winding number test](http://geomalgorithms.com/a03-_inclusion.html).
 
 example
 =======
