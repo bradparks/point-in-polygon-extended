@@ -2,19 +2,20 @@
  * Returns whether a point is in a polygon using ray casting. This still returns
  * false if a point is on the boundary.
  *
- * See http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+ * Based on Point Inclusion in Polygon Test (PNPOLY) by W. Randolph Franklin:
+ * http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
  *
- * @param point {object} x,y coordinate
- * @param vs {Array} array of {object} x,y points
+ * @param point {Array} should be a 2-item array of coordinates
+ * @param polygon {Array} should be an array of 2-item arrays of coordinates.
  * @returns {boolean} true if point is inside or false if not
  */
-function pointInPolyRaycast(point, vs) {
+function pointInPolyRaycast(point, polygon) {
 	var x = point[0], y = point[1];
 
 	var inside = false;
-	for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
-		var xi = vs[i][0], yi = vs[i][1];
-		var xj = vs[j][0], yj = vs[j][1];
+	for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+		var xi = polygon[i][0], yi = polygon[i][1];
+		var xj = polygon[j][0], yj = polygon[j][1];
 
 		var intersect = ((yi > y) !== (yj > y)) &&
 			(x < (xj - xi) * (y - yi) / (yj - yi) + xi);
@@ -29,19 +30,19 @@ function pointInPolyRaycast(point, vs) {
 /**
  * Returns whether a point is in a polygon using a winding number test
  *
- * http://geomalgorithms.com/a03-_inclusion.html
+ * Algorithm by Dan Sunday: http://geomalgorithms.com/a03-_inclusion.html
  *
- * @param point {object} x,y coordinate
- * @param points {Array} array of x,y point objects
+ * @param point {Array} should be a 2-item array of coordinates
+ * @param polygon {Array} should be an array of 2-item arrays of coordinates.
  * @return {boolean} true if inside, false if outside
  */
-function pointInPolyWindingNumber(point, points) {
-	if (points.length === 0) {
+function pointInPolyWindingNumber(point, polygon) {
+	if (polygon.length === 0) {
 		return false;
 	}
-	var n = points.length;
-	var newPoints = points.slice(0);
-	newPoints.push(points[0]);
+	var n = polygon.length;
+	var newPoints = polygon.slice(0);
+	newPoints.push(polygon[0]);
 	var wn = 0; // wn counter
 	var pt = {
 		x: point[0],
