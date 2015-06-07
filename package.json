@@ -1,35 +1,58 @@
 {
-    "name" : "point-in-polygon",
+    "name" : "point-in-polygon-extended",
     "description" : "determine if a point is inside a polygon with a ray intersection counting algorithm",
     "version" : "0.0.0",
     "repository" : {
         "type" : "git",
-        "url" : "git://github.com/substack/point-in-polygon.git"
+        "url" : "git://github.com/iominh/point-in-polygon-extended.git"
     },
-    "main" : "index.js",
+    "main" : "src/index.js",
     "keywords" : [
         "point",
         "polygon",
         "inside"
     ],
+  "devDependencies": {
+    "browserify": "^6.1.0",
+    "chai": "^1.9.2",
+    "closurecompiler": "^1.3.2",
+    "coveralls": "^2.11.2",
+    "envify": "^3.2.0",
+    "glob": "^4.2.1",
+    "gulp": "^3.8.8",
+    "gulp-closure-compiler": "^0.2.7",
+    "gulp-concat": "^2.4.2",
+    "gulp-filter": "^1.0.2",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-jscs": "^1.2.0",
+    "gulp-jshint": "^1.8.5",
+    "gulp-mocha": "^1.1.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.4.0",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "^1.21.5",
+    "rfolderify": "^1.3.0",
+    "rocambole": "^0.3.6",
+    "rocambole-token": "^1.2.1",
+    "vinyl-map": "^1.0.1",
+    "vinyl-source-stream": "^1.0.0"
+  },    
     "directories" : {
         "lib" : ".",
         "example" : "example",
         "test" : "test"
     },
     "scripts" : {
-        "test" : "tap test/*.js"
-    },
-    "devDependencies" : {
-        "tap" : "0.0.x"
+        "prepublish": "gulp build",
+        "test": "gulp test"
     },
     "engines" : {
         "node" : ">=0.4.0"
     },
     "license" : "MIT",
     "author" : {
-        "name" : "James Halliday",
-        "email" : "mail@substack.net",
-        "url" : "http://substack.net"
+        "name" : "Minh Nguyen",
+        "email" : "minhongrails@gmail.com",
+        "url" : "http://www.minh.io"
     }
 }

@@ -1,14 +1,17 @@
-point-in-polygon
+point-in-polygon-extended
 ================
 
 Determine if a point is inside of a polygon.
 
 This is a fork of James Halliday's [point-in-polygon](https://github.com/substack/point-in-polygon) that extends it to allow for alternative algorithms beyond ray casting.
 
-I had issues using the original library because it failed to detect points on boundaries [see issue2](https://github.com/substack/point-in-polygon/issues/2) so I switched to [robust-point-in-polygon](https://www.npmjs.com/package/robust-point-in-polygon) but
+I had issues using the original library because it failed to detect points on boundaries ([see issue2](https://github.com/substack/point-in-polygon/issues/2)) so I switched to [robust-point-in-polygon](https://www.npmjs.com/package/robust-point-in-polygon) but
 that too had issues for certain complex polygons.
 
 Ultimately, I've decided to implement my own library that allows a user to switch between different algorithms and compare their results. The current default algorithm I'm exploring is the [winding number test](http://geomalgorithms.com/a03-_inclusion.html).
+
+Also, I really liked the testing layout of [libtess.js by Brendan Kenny](https://github.com/brendankenny/libtess.js) so I borrowed
+some Mocha and gulp source from his project.
 
 example
 =======
@@ -47,4 +50,4 @@ Return whether `point` is contained in `polygon`.
 install
 =======
 
-    npm install point-in-polygon
+    npm install point-in-polygon-extended
