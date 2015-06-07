@@ -102,3 +102,10 @@ Alternatively, you can run from the root directory
 ```javascript
 mocha --ui tdd
 ```
+
+To build, run mocha tests, and measure code coverage
+```
+gulp build
+gulp test
+gulp coverage
+```

@@ -84,25 +84,6 @@ function isLeft(p0, p1, p2) {
 		((p2[0] - p0[0]) * (p1[1] - p0[1]) );
 }
 
-/**
- * Given an array of 2-item array of coordinates, return an array
- * of objects with x,y attributes
- *
- * @param array
- * @returns {Array}
- */
-function convertArraysToXYObjects (array) {
-	var simpleRectangleObjects = [];
-	array.forEach(function (element) {
-		simpleRectangleObjects.push({
-			x: element[0],
-			y: element[1]
-		})
-	});
-	return simpleRectangleObjects;
-}
-
-
 module.exports = {
 	pointInPolyWindingNumber: pointInPolyWindingNumber,
 	pointInPolyRaycast: pointInPolyRaycast

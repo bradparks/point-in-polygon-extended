@@ -16,7 +16,9 @@ var simpleRectangle = [
 	[ 2, 2 ],
 	[ 2, 1 ]
 ];
-var simpleRectangleObjects = convertArraysToXYObjects(simpleRectangle);
+var pt1 = [1.5, 1.5];
+var pt2 = [4.9, 1.2];
+var pt3 = [1.8, 1.1];
 
 suite('Ray casting point in polygon tests', function () {
 	test('simple rectangle', function () {
@@ -5986,22 +5988,18 @@ function pointInPolyWindingNumber(point, polygon) {
 	var newPoints = polygon.slice(0);
 	newPoints.push(polygon[0]);
 	var wn = 0; // wn counter
-	var pt = {
-		x: point[0],
-		y: point[1]
-	};
 
 	// loop through all edges of the polygon
 	for (var i = 0; i < n; i++) {
-		if (newPoints[i].y <= pt.y) {
-			if (newPoints[i + 1].y > pt.y) {
-				if (isLeft(newPoints[i], newPoints[i + 1], pt) > 0) {
+		if (newPoints[i][1] <= point[1]) {
+			if (newPoints[i + 1][1] > point[1]) {
+				if (isLeft(newPoints[i], newPoints[i + 1], point) > 0) {
 					wn++;
 				}
 			}
 		} else {
-			if (newPoints[i + 1].y <= pt.y) {
-				if (isLeft(newPoints[i], newPoints[i + 1], pt) < 0) {
+			if (newPoints[i + 1][1] <= point[1]) {
+				if (isLeft(newPoints[i], newPoints[i + 1], point) < 0) {
 					wn--;
 				}
 			}
@@ -6025,28 +6023,9 @@ function pointInPolyWindingNumber(point, polygon) {
  *  <0 for P2  right of the line
  */
 function isLeft(p0, p1, p2) {
-	return ( (p1.x - p0.x) * (p2.y - p0.y) ) -
-		((p2.x - p0.x) * (p1.y - p0.y) );
+	return ( (p1[0] - p0[0]) * (p2[1] - p0[1]) ) -
+		((p2[0] - p0[0]) * (p1[1] - p0[1]) );
 }
-
-/**
- * Given an array of 2-item array of coordinates, return an array
- * of objects with x,y attributes
- *
- * @param array
- * @returns {Array}
- */
-function convertArraysToXYObjects (array) {
-	var simpleRectangleObjects = [];
-	array.forEach(function (element) {
-		simpleRectangleObjects.push({
-			x: element[0],
-			y: element[1]
-		})
-	});
-	return simpleRectangleObjects;
-}
-
 
 module.exports = {
 	pointInPolyWindingNumber: pointInPolyWindingNumber,
