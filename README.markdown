@@ -95,6 +95,8 @@ Thank you to the following people and projects:
 
 # tips + tricks
 
+## Debugging
+
 If you have Webstorm or IntelliJ, set a breakpoint and create a Mocha run configuration with a TDD user interface.
 
 Alternatively, you can run from the root directory
@@ -102,6 +104,8 @@ Alternatively, you can run from the root directory
 ```javascript
 mocha --ui tdd
 ```
+
+## Gulp tasks
 
 To build, run mocha tests, and measure code coverage
 ```
